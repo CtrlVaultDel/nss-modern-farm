@@ -1,3 +1,16 @@
+
+// plan.js is responsible for defining THREE rows of crops to be planted
+// For each row, there are SIX plots of land.
+
+// ------- EXAMPLE -------
+//  C1  C2  C3  C4  C5  C6
+//  Co  Co  Wh  Su  So  Su
+//  Po  Su  As  So  Wh  Wh
+//
+
+// Each plot is randomly assigned one of the following types of food:
+// Corn (Co) -- Asparagus (As) -- Potato (Po) -- Wheat (Wh) -- Sunflower (Su) -- Soybean (So)
+
 const types = ["Soybean", "Corn", "Asparagus", "Wheat", "Potato", "Sunflower"]
 
 export const createPlan = () => {
