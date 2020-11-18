@@ -18,3 +18,4 @@ plantSeeds(plantingPlans);
 const whatToPlant = usePlants();
 console.log("These are the seeds we need");
 console.log(whatToPlant);
+
