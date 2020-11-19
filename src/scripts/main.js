@@ -4,6 +4,7 @@ console.log("Welcome to the main module")
 import { createPlan } from "./plan.js"
 import { plantSeeds } from "./tractor.js"
 import { usePlants } from "./field.js"
+import { harvestPlants } from "./harvester.js"
 
 // Create randomly generated planting plans
 const plantingPlans = createPlan();
@@ -16,5 +17,10 @@ plantSeeds(plantingPlans);
 
 // Print out the seeds to be planted
 const whatToPlant = usePlants();
-console.log("These are the seeds we need");
+console.log("These are the seeds we planted");
 console.log(whatToPlant);
+
+// An array that holds the plants that have been harvested
+const harvestArray = harvestPlants(whatToPlant);
+console.log("These are the plants we harvested")
+console.log(harvestArray)

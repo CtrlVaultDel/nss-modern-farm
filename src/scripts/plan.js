@@ -6,7 +6,6 @@
 //  C1  C2  C3  C4  C5  C6
 //  Co  Co  Wh  Su  So  Su
 //  Po  Su  As  So  Wh  Wh
-//
 
 // Each plot is randomly assigned one of the following types of food:
 // Corn (Co) -- Asparagus (As) -- Potato (Po) -- Wheat (Wh) -- Sunflower (Su) -- Soybean (So)
@@ -26,10 +25,6 @@ export const createPlan = () => {
 
     return plan
 }
-
-
-
-
 /*
     This is a generator function used to randomly
     generate crop types to plants in each plot. It
@@ -42,4 +37,3 @@ const crop = function* () {
         yield types[typeIdx]
     }
 }()
-
