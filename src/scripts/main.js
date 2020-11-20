@@ -5,6 +5,7 @@ import { createPlan } from "./plan.js"
 import { plantSeeds } from "./tractor.js"
 import { usePlants } from "./field.js"
 import { harvestPlants } from "./harvester.js"
+import { catalog } from "./catalog.js"
 
 // Create randomly generated planting plans
 const plantingPlans = createPlan();
@@ -24,3 +25,5 @@ console.log(whatToPlant);
 const harvestArray = harvestPlants(whatToPlant);
 console.log("These are the plants we harvested")
 console.log(harvestArray)
+
+catalog();
