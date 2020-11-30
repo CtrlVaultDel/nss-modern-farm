@@ -46,3 +46,23 @@ h1,h2,h3,h4,h5,h6 {
     flex-basis: 16.66%;
     text-align: center;
 }
+
+.quantityBox{
+    display:flex;
+    width: 100%;
+    border-bottom: solid black 2px;
+    padding: 5px;
+}
+
+.foodAndAmountHeader, .foodAndAmount{
+    font-weight: bold;
+    padding: 2px;
+    margin: 2px;
+    border: solid black 1px;
+    flex-basis: 14.2%;
+    background-color: #cfc866;
+}
+
+.foodAndAmount{
+    text-align: center;
+}
