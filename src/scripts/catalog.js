@@ -16,6 +16,21 @@ export const catalog = () =>{
         return 0;
     });
 
+    // Add a unique identifier to each plant
+    let identity =0;
+    const plantsToSellWithID = plantsToSell.map(plant => {
+        identity++;
+        return{
+            ...plant,
+            id: identity
+        }
+    });
+    console.log("These are the plants with unique IDs");
+    console.log(plantsToSellWithID);
+
+    // Can use .map to iterate through the original array and return a new array with the identity values
+    // Check out the spread operator
+
     const contentElement = document.querySelector(".container");
     const quantityElement = document.querySelector(".quantityBox");
 
@@ -35,7 +50,7 @@ export const catalog = () =>{
         `
     });
 
-    plantsToSell.forEach(element => {
+    plantsToSellWithID.forEach(element => {
         const plantToPage = element.type;
         contentElement.innerHTML += `<section class="plant">${plantToPage}</section>`;
     });
@@ -96,6 +111,7 @@ const getQuantity = (plantArray) =>{
         quantity: wheatCount
         }
     ]
+    console.log("These are the quantities of each harvested plant")
     console.log(quantityArray);
     return quantityArray;
 }
