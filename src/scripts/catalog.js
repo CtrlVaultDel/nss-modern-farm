@@ -52,7 +52,7 @@ export const catalog = () =>{
 
     plantsToSellWithID.forEach(element => {
         const plantToPage = element.type;
-        contentElement.innerHTML += `<section class="plant">${plantToPage}</section>`;
+        contentElement.innerHTML += `<section class="plant"><img src="./icons/${plantToPage}.png"></section>`;
     });
 }
 
