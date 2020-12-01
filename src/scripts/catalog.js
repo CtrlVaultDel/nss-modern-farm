@@ -1,5 +1,6 @@
-import { usePlants } from "./field.js"
-import { harvestPlants } from "./harvester.js"
+import { usePlants } from "./field.js";
+import { harvestPlants } from "./harvester.js";
+import { catalogHTML } from "./catalogHTML.js";
 
 export const catalog = () =>{
     const grownPlants = usePlants();
@@ -17,6 +18,7 @@ export const catalog = () =>{
     });
 
     // Add a unique identifier to each plant
+    // The ... indicates a spread operator
     let identity =0;
     const plantsToSellWithID = plantsToSell.map(plant => {
         identity++;
@@ -28,27 +30,12 @@ export const catalog = () =>{
     console.log("These are the plants with unique IDs");
     console.log(plantsToSellWithID);
 
-    // Can use .map to iterate through the original array and return a new array with the identity values
-    // Check out the spread operator
-
     const contentElement = document.querySelector(".container");
     const quantityElement = document.querySelector(".quantityBox");
 
-    quantityElement.innerHTML += `
-        <section class="foodAndAmountHeader">
-            <div class="foodHeader">Food</div>
-            <div class="quantityHeader">Quantity</div>
-        </section>
-        `
+    // Convert the array to a string, put it in a new array and then send it to the DOM
+    quantityElement.innerHTML += quantityOfPlants.map(plant => catalogHTML(plant)).join("");
 
-    quantityOfPlants.forEach(element =>{
-        quantityElement.innerHTML += `
-            <section class="foodAndAmount">
-                <div class="food">${element.type}</div>
-                <div class="amount">${element.quantity}</div>
-            </section>
-        `
-    });
 
     plantsToSellWithID.forEach(element => {
         const plantToPage = element.type;
